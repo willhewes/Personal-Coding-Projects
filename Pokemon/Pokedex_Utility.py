@@ -52,8 +52,8 @@ def display_pokemon(pokemon_data, display_frame):
     # Add Pokémon details as labels
     tk.Label(display_frame, text=f"Name: {name}", font=title_font, bg=background_color, fg=text_color).pack(pady=5)
     tk.Label(display_frame, text=f"ID: {poke_id}", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
-    tk.Label(display_frame, text=f"Height: {height} centimetres", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
-    tk.Label(display_frame, text=f"Weight: {weight} kilograms", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
+    tk.Label(display_frame, text=f"Height: {height}cm", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
+    tk.Label(display_frame, text=f"Weight: {weight}kg", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
     tk.Label(display_frame, text=f"Types: {types}", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
     tk.Label(display_frame, text=f"Abilities: {abilities}", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
     tk.Label(display_frame, text="Stats:", font=label_font, bg=background_color, fg=text_color).pack(pady=5)
