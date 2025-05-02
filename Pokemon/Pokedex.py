@@ -16,7 +16,7 @@ def fetch_pokemon(pokemon_id=True):
                 messagebox.showerror("Invalid Input", f"Error: {e}")
                 return
     else:
-        pokemon_id = random.randint(1, 1010)
+        pokemon_id = random.randint(1, 1010) # Valid Pokemon IDs up to 1010, didn't bother to include those over 10000
 
     pokemon_data = get_pokemon_by_id(pokemon_id)
     if pokemon_data:
