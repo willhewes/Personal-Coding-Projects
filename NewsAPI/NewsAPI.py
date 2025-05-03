@@ -15,7 +15,7 @@ three_days_ago = (datetime.now() - timedelta(days=3)).strftime('%Y-%m-%d')
 
 # Parameters dictionary
 parameters = {
-    'q': 'rugby', # Select relevant topic
+    'q': input("Topic : "), # Select relevant topic
     'from': three_days_ago, # Select date for search
     'sortBy': 'relevance',
     'apiKey': API_KEY,
