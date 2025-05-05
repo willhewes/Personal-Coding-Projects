@@ -5,7 +5,8 @@ time.sleep(1)
 print("When you see \"draw\", you have 0.3 seconds to press enter")
 print("but if you press enter too early you lose")
 time.sleep(1)
-input("Press enter to begin")
+response = input("Input 1 for easy, 2 for hard, 3 for unfair")
+difficulty = [0.5, 0.3, 0.1]
 
 while True:
     print()
@@ -20,7 +21,7 @@ while True:
 
     if timeElapsed < 0.01:
         print("You drew too early")
-    elif timeElapsed < 0.3:
+    elif timeElapsed < difficulty[int(response) - 1]:
         print(f"You took {timeElapsed} seconds to draw")
         print("You win")
     else:
@@ -28,7 +29,7 @@ while True:
         print("You LOSE!")
 
     print("Enter \"exit\" to stop, or press Enter to play again")
-    response = input(">").lower()
-    if response == "exit":
+    leave = input(">").lower()
+    if leave == "exit":
         print("Thanks for playing")
         sys.exit()
