@@ -1,5 +1,11 @@
 import random, sys, time
+import pygame
 
+pygame.mixer.init()
+shot_sound = pygame.mixer.Sound('Quickdraw\\Bang.mp3')
+shot_sound.set_volume(0.2)
+
+print()
 print("Fast draw - reflex tester")
 time.sleep(1)
 print("When you see \"draw\", you have 0.3 seconds to press enter")
@@ -26,10 +32,11 @@ while True:
 
     drawTime = time.time()
     input()
+    shot_sound.play()
     timeElapsed = time.time() - drawTime
     timeElapsed = round(timeElapsed, 4)
 
-    if best_time is None or 0.01 < timeElapsed < best_time:
+    if best_time is None or 0.01 < timeElapsed < best_time: # Doesn't deal with first time false start
         best_time = timeElapsed
         print(f"You beat your best time! Your new best time is {best_time}")
 
