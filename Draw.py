@@ -12,8 +12,12 @@ loss_counter = 0
 best_time = None
 
 while True:
-    response = input("Input 1 for easy, 2 for hard, 3 for unfair")
-    assert int(response) in (1, 2, 3)
+    while True:
+        response = input("Input 1 for easy, 2 for hard, 3 for unfair: ")
+        if response in ("1", "2", "3"):
+            break
+        print("Invalid input. Please enter 1, 2, or 3")
+
     time.sleep(2)
     print()
     print("This towns not big enough for the two of us")
