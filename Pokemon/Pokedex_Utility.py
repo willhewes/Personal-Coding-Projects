@@ -46,8 +46,8 @@ def display_pokemon(pokemon_data, display_frame):
     title_font = ("Helvetica", 20, "bold")
     label_font = ("Helvetica", 14)
     stats_font = ("Helvetica", 12)
-    background_color = "#f0f0f0"
-    text_color = "#333333"
+    background_color = "green"
+    text_color = "yellow"
 
     # Add Pokémon details as labels
     tk.Label(display_frame, text=f"Name: {name}", font=title_font, bg=background_color, fg=text_color).pack(pady=5)

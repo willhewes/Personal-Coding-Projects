@@ -32,14 +32,15 @@ def fetch_pokemon(pokemon_id=True):
 root = Tk()
 root.title("Pokédex")
 root.minsize(400, 300)
-Label(root, text = "Pokédex", font = ("Helvetica", 16)).pack(expand=True)
+root.config(bg="green")
+Label(root, text = "Pokédex", font = ("Helvetica", 24, "bold"), fg = "yellow", bg = "green").pack(expand=True)
 
 # Header frame
-header_frame = Frame(root, bg="#d9e3f0")
+header_frame = Frame(root, bg="black")
 header_frame.pack(side='top', fill='x', pady=20)
 
 # Frame to hold action buttons
-button_frame = Frame(root, bg="#f0f0f0")
+button_frame = Frame(root, bg = "green")
 button_frame.pack(side='top', pady=20, fill="y")
 
 # Button to fetch random Pokémon
@@ -48,7 +49,7 @@ Button(button_frame, text="Random Pokémon", command=lambda: fetch_pokemon(False
 Button(button_frame, text="Enter Pokémon ID", command=lambda: fetch_pokemon(True), font=("Helvetica", 16), bg = "blue").pack(side='right', padx=20)
 
 # Frame to display Pokémon details and image
-display_frame = Frame(root, bg="#f0f0f0")
+display_frame = Frame(root, bg="green")
 display_frame.pack(expand=True, fill='both', pady=20)
 
 # Run the Tkinter main event loop
