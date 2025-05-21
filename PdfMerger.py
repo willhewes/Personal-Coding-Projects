@@ -1,4 +1,5 @@
 from PyPDF2 import PdfMerger
+from tkinter import Tk, filedialog
 
 # Function to merge PDFs
 def merge_pdfs(pdf_list, output_file):
@@ -8,14 +9,26 @@ def merge_pdfs(pdf_list, output_file):
     merger.write(output_file)
     merger.close()
 
-# Specify the input PDFs and output file
-pdf_files = [
-    r"C:\Users\willi\My Drive\Engineering\Obsidian Vault\All Else\CURLFC\Sports Grant Form - Will Hewes.pdf",
-    r"C:\Users\willi\My Drive\Engineering\Obsidian Vault\All Else\CURLFC\CURLFC Subs 23_24 - Basic Invoice-2.pdf"
-]
+# Hide the root tkinter window
+root = Tk()
+root.withdraw()
 
-output_pdf = r"C:\Users\willi\My Drive\Engineering\Obsidian Vault\All Else\CURLFC\Sports Expense Form - Will Hewes.pdf"
+# Select input PDF files
+pdf_files = filedialog.askopenfilenames(
+    title="Select PDF files to merge",
+    filetypes=[("PDF files", "*.pdf")]
+)
 
-# Merge the PDFs
-merge_pdfs(pdf_files, output_pdf)
-print(f"PDFs merged successfully into {output_pdf}")
+# Select where to save the output PDF
+output_pdf = filedialog.asksaveasfilename(
+    title="Save Merged PDF As",
+    defaultextension=".pdf",
+    filetypes=[("PDF files", "*.pdf")]
+)
+
+# Merge at an output location
+if pdf_files and output_pdf:
+    merge_pdfs(pdf_files, output_pdf)
+    print(f"PDFs merged successfully into {output_pdf}")
+else:
+    print("No files selected.")
